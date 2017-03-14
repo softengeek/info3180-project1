@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <div class="profile">
+        <img src="{{ url_for('static', filename='uploads/'+user.image) }}"></img>
+        
+        <div class="user-profile">
+            <p>{{ user.first_name}} {{ user.last_name }}</p>
+            <p>Gender:{{ user.gender }} </p>
+            <p>Age: {{ user.age }} </p>
+            <p>Username: {{ user.username }} </p>
+            <p>User id: {{ user.userid }} <br/>
+            <p>{{ user.biography }}</p>
+            <p>Profile Created On: {{ user.created_on }}</p>
+        </div>
+    </div>
+    
+    <br/>
+
+{% endblock %}

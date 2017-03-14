@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+ 
+
+
+{% block main %}
+    {% with messages = get_flashed_messages() %}
+       {% if messages %}
+          {% for message in messages %}
+             {{ message }}
+          {% endfor %}
+       {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/profile" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        {{ form.fname.label }} <br> {{ form.fname }} <br>
+        {{ form.lname.label }} <br> {{ form.lname }} <br>
+        {{ form.username.label}} <br> {{ form.username }} <br>
+        {{ form.age.label }} <br> {{ form.age }} <br>
+        {{ form.biography.label }} <br> {{ form.biography }} <br>
+        {{ form.image.label }} <br> {{ form.image }} <br>
+        {{ form.gender.label }} <br> {{ form.gender }} <br>
+        {{ form.save }}
+    </form>
+{% endblock %}
